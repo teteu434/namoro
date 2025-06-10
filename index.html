@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Namora comigo</title>
+  <style>
+    body {
+        background-color: darkgreen;
+    }
+    .container {
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    #alianca {
+      width: 100px;
+      height: 100px;
+      margin-top: 50px;
+    }
+
+    #botoes {
+      margin-top: 50px;
+    }
+    
+    #rodape {
+       text-align: center;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 0 10px;
+    }
+  </style>
+  <script>
+    function getRandomPosition() {
+      var randomLeft = Math.floor(Math.random() * (window.innerWidth - this.offsetWidth));
+      var randomTop = Math.floor(Math.random() * (window.innerHeight - this.offsetHeight));
+      
+      this.style.position = "absolute";
+      this.style.left = randomLeft + "px";
+      this.style.top = randomTop + "px";
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      var naoButton = document.getElementById("botaoNao");
+      naoButton.addEventListener("mouseover", getRandomPosition);
+      naoButton.addEventListener("click", function(event) {
+        event.preventDefault();
+      });
+
+      var simButton = document.getElementById("botaoSim");
+      simButton.addEventListener("click", function() {
+        window.location.href = "https://www.youtube.com/watch?v=YMmDtydK-L0";
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Quer namorar comigo?</h1>
+    <img id="alianca" src="alianca.png" alt="alianca">
+    <div id="botoes">
+      <button id="botaoSim">Sim</button>
+      <button id="botaoNao">Não</button>
+    </div>
+  </div>
+
+  <footer>
+    <h3 id="rodape" >Um beijo Gatinha</h3>
+  </footer>
+</body>
+</html>
